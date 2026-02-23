@@ -533,7 +533,7 @@ checkAuth();
             <a href="publicaciones.php" class="nav-link <?php echo $page == 'publicaciones' ? 'active' : ''; ?>"><i class="fas fa-eye" style="margin-right:0.75rem;"></i> Monitor Feed</a>
             <a href="gestion_publicaciones.php" class="nav-link <?php echo $page == 'gestion_publicaciones' ? 'active' : ''; ?>"><i class="fas fa-tasks" style="margin-right:0.75rem;"></i> Gestión CRUD</a>
             <a href="docs.php" class="nav-link <?php echo $page == 'docs' ? 'active' : ''; ?>"><i class="fas fa-book" style="margin-right:0.75rem;"></i> Documentación</a>
-            <a href="debug_docs.php" class="nav-link" style="color:#10b981;"><i class="fas fa-robot" style="margin-right:0.75rem;"></i> Descargar IA Spec</a>
+            <a href="download_spec.php" class="nav-link <?php echo $page == 'download_spec' ? 'active' : ''; ?>" style="color:#10b981;"><i class="fas fa-robot" style="margin-right:0.75rem;"></i> Descargar IA Spec</a>
             <a href="perfil.php" class="nav-link <?php echo $page == 'perfil' ? 'active' : ''; ?>"><i class="fas fa-user-cog" style="margin-right:0.75rem;"></i> Mi Perfil</a>
         </nav>
         <div class="sidebar-footer">
