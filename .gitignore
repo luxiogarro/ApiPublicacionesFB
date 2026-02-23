@@ -1,0 +1,34 @@
+# Configuración de Git - API Publicaciones FB
+
+# Credenciales y Configuración
+config/config.php
+.env
+
+# Archivos de Servidor
+.htaccess
+error_log
+php_error.log
+
+# Cargas y Multimedia (Opcional: puedes querer subirlos si son assets base)
+# uploads/*
+# !uploads/.gitkeep
+
+# Archivos de Sistema y Entorno
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporales y Pruebas
+test_descarga.php
+test_api.php
+descarga.php
+obtener.php
+guia_ia.txt
+debug_docs.php
+ia-spec.md
+API_SPECIFICATION.md
+
+# XAMPP / Temp
+temp/
+logs/

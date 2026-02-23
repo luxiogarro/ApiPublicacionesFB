@@ -1,0 +1,12 @@
+<?php
+// Ejemplo de configuración para producción
+// Copia este archivo como config.php y ajusta los valores
+
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'api_publicaciones_fb');
+define('DB_USER', 'tu_usuario');
+define('DB_PASS', 'tu_password');
+
+// Otros ajustes
+define('UPLOAD_DIR', __DIR__ . '/../uploads/');
+define('BASE_URL', 'https://apifb.luxio.dev/');
