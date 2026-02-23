@@ -558,7 +558,7 @@ tinymce.init({
     selector: '#tiny-editor',
     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
     toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline | link image media table | align lineheight | numlist bullist | emoticons',
-    language: 'es', height: 400, menubar: false, branding: false, promotion: false,
+    height: 400, menubar: false, branding: false, promotion: false,
     content_style: 'body { font-family:Inter,Helvetica,Arial,sans-serif; font-size:16px }'
 });
 
