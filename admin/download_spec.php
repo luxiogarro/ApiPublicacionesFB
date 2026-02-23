@@ -42,14 +42,15 @@ $k = htmlspecialchars($apiKey);
 </div>
 
 <div class="hub-grid">
-    <div class="dl-card">
-        <span class="icon">📜</span>
-        <h3>feed.js — JavaScript del Feed</h3>
-        <p>Lógica completa del feed con avatares, imágenes, videos y publicaciones fijadas.</p>
-        <button class="btn-copy" style="background:#3b82f6" onclick="copiar('js-code')">
-            <i class="fas fa-copy"></i> Copiar JS Completo
-        </button>
+    <div class="dl-card" style="border-color: var(--primary); background: #f0f7ff;">
+        <span class="icon">🤖</span>
+        <h3>Archivo de Contexto para IA (Recomendado)</h3>
+        <p>Descarga el archivo <strong>ia-spec.md</strong>. Cópialo a tu nuevo proyecto y dáselo a tu IA para que implemente el feed completo automáticamente.</p>
+        <a href="../obtener.php?format=md" class="btn-copy" style="background:var(--primary); text-decoration:none; justify-content:center;">
+            <i class="fas fa-file-download"></i> Descargar IA Spec (.md)
+        </a>
     </div>
+    <div class="dl-card">
     <div class="dl-card">
         <span class="icon">🌐</span>
         <h3>feed.html — Página Completa</h3>
