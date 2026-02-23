@@ -68,7 +68,7 @@ require_once __DIR__ . '/includes/header.php';
         <h1><i class="fas fa-book-open" style="color:var(--primary);"></i> Documentación de la API</h1>
         <p style="color: var(--text-muted); margin-top: 0.5rem;">Guía completa de integración — implementa el feed de publicaciones en cualquier sitio web.</p>
     </div>
-    <a href="debug_docs.php" class="btn-download" style="background:#10b981; color:white; padding: 0.8rem 1.2rem; border-radius:12px; font-size:0.9rem; text-decoration:none; display:flex; align-items:center; gap:0.5rem;">
+    <a href="download_spec.php" class="btn-download" style="background:#10b981; color:white; padding: 0.8rem 1.2rem; border-radius:12px; font-size:0.9rem; text-decoration:none; display:flex; align-items:center; gap:0.5rem;">
         <i class="fas fa-vial"></i> Abrir Hub de Descargas
     </a>
 </div>
