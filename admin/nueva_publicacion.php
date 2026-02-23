@@ -144,6 +144,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 <?php endif; ?>
 
+<?php if ($error): ?>
+<div class="card" style="background: var(--danger); color: white; padding: 1rem; margin-bottom: 2rem;">
+    <i class="fas fa-exclamation-triangle"></i> <?php echo $error; ?>
+</div>
+<?php endif; ?>
+
 <div class="form-container">
     <form method="POST" enctype="multipart/form-data" id="publish-form">
         <div class="card" style="margin-bottom: 1.5rem;">
