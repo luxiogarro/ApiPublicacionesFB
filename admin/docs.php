@@ -9,9 +9,15 @@ require_once __DIR__ . '/includes/header.php';
 <script>hljs.highlightAll();</script>
 
 <style>
-    .docs-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; align-items: start; }
+    /* Prevents the 1fr column from blowing out its container when <pre> tags are wide */
+    .docs-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 2rem; align-items: start; }
+    
+    @media (max-width: 900px) {
+        .docs-layout { grid-template-columns: 1fr; }
+        .docs-sidebar { position: static; margin-bottom: 2rem; }
+    }
+
     .docs-sidebar {
-        position: sticky; top: 1rem;
         background: white; border-radius: var(--radius); border: 1px solid var(--border);
         padding: 1.5rem; box-shadow: var(--shadow);
     }
@@ -29,9 +35,9 @@ require_once __DIR__ . '/includes/header.php';
     .method-post   { background: #dbeafe; color: #1e40af; }
     .method-delete { background: #fee2e2; color: #991b1b; }
 
-    .endpoint-url { font-family: monospace; background: #f8f9fa; padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid #e5e7eb; color: #111; font-size: 0.95rem; margin: 0.5rem 0 1rem; }
+    .endpoint-url { font-family: monospace; background: #f8f9fa; padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid #e5e7eb; color: #111; font-size: 0.95rem; margin: 0.5rem 0 1rem; word-break: break-all; }
 
-    pre { margin: 0; }
+    pre { margin: 0; max-width: 100%; overflow-x: auto; }
     pre code { border-radius: 10px !important; font-size: 0.82rem !important; }
 
     .param-table { overflow-x: auto; margin: 0.5rem 0; }
@@ -57,7 +63,7 @@ require_once __DIR__ . '/includes/header.php';
     .change-tag { display: inline-block; background: #dcfce7; color: #15803d; font-size: 0.68rem; font-weight: 700; padding: 1px 7px; border-radius: 10px; margin-left: 6px; }
 </style>
 
-<div class="admin-header" style="display:flex; justify-content:space-between; align-items:center;">
+<div class="admin-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
     <div>
         <h1><i class="fas fa-book-open" style="color:var(--primary);"></i> Documentación de la API</h1>
         <p style="color: var(--text-muted); margin-top: 0.5rem;">Guía completa de integración — implementa el feed de publicaciones en cualquier sitio web.</p>
