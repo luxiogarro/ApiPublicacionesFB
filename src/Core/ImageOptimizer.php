@@ -53,6 +53,16 @@ class ImageOptimizer {
             $image = $tmpImage;
         }
 
+        // Asegurar que la imagen sea TrueColor para compatibilidad con WebP
+        if (!imageistruecolor($image)) {
+            $trueColor = imagecreatetruecolor(imagesx($image), imagesy($image));
+            imagealphablending($trueColor, false);
+            imagesavealpha($trueColor, true);
+            imagecopy($trueColor, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
+            imagedestroy($image);
+            $image = $trueColor;
+        }
+
         $newFilename = uniqid() . '.webp';
         $destination = UPLOAD_DIR . $newFilename;
 

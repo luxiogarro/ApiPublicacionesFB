@@ -120,18 +120,29 @@ class Post {
         return $posts;
     }
 
-    public static function update($id, $data) {
+    public static function update($id, $cliente_id, $data) {
         $db = Database::getInstance()->getConnection();
-        $stmt = $db->prepare("UPDATE publicaciones SET titulo = ?, contenido = ?, video_url = ?, cliente_id = ?, fijada = ?, fijada_hasta = ? WHERE id = ?");
+        $stmt = $db->prepare("UPDATE publicaciones SET titulo = ?, contenido = ?, video_url = ?, fijada = ?, fijada_hasta = ? WHERE id = ? AND cliente_id = ?");
         return $stmt->execute([
             $data['titulo'] ?? '',
             $data['contenido'],
             $data['video_url'] ?? null,
-            $data['cliente_id'],
             $data['fijada'] ?? 0,
             $data['fijada_hasta'] ?? null,
-            $id
+            $id,
+            $cliente_id
         ]);
+    }
+
+    public static function delete($id, $cliente_id) {
+        $db = Database::getInstance()->getConnection();
+        
+        // Primero eliminar adjuntos (opcional si hay ON DELETE CASCADE, pero mejor ser explícito)
+        // Aunque generalmente se prefiere que la DB lo maneje.
+        
+        $stmt = $db->prepare("DELETE FROM publicaciones WHERE id = ? AND cliente_id = ?");
+        $stmt->execute([$id, $cliente_id]);
+        return $stmt->rowCount() > 0;
     }
 
     private static function getAttachments($post_id) {

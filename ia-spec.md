@@ -20,7 +20,15 @@ X-API-KEY: TU_API_KEY
 
 ---
 
-## 2. Endpoints de la API
+## 2. Seguridad y Multi-tenancy (Aislamiento)
+Este sistema aplica un aislamiento estricto por cliente. Tu `X-API-KEY` determina automáticamente qué datos puedes ver y modificar.
+- **Aislamiento de Lectura**: Al consultar `/publicaciones`, solo recibirás las de tu propia empresa.
+- **Aislamiento de Escritura**: Al crear, actualizar o borrar, el sistema verifica que la operación pertenezca a tu `cliente_id`.
+- **Usuarios Locales**: Los autores son locales a tu instancia. Si envías un `usuario_external_id` que ya existe en otra empresa, para tu sistema será un usuario nuevo y único.
+
+---
+
+## 3. Endpoints de la API
 
 ### 2.1 Obtener Feed de Publicaciones
 ```

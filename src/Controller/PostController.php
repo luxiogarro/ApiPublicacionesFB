@@ -8,8 +8,8 @@ use App\Model\Post;
 use App\Model\User;
 
 class PostController {
-    public function index($params, $data, $query) {
-        $cliente = $this->authenticate();
+    public function index($params = [], $data = [], $query = []) {
+        $cliente = \App\Middleware\AuthMiddleware::validate();
         
         $limit = isset($query['limit']) ? (int)$query['limit'] : null;
         $offset = isset($query['offset']) ? (int)$query['offset'] : 0;
@@ -55,6 +55,29 @@ class PostController {
         }
 
         Response::json(['message' => 'Publicación creada con éxito', 'post_id' => $post_id], 201);
+    }
+
+    public function update($params) {
+        $cliente = AuthMiddleware::validate();
+        $id = $params['id'];
+        $data = Request::getBody();
+
+        if (Post::update($id, $cliente['id'], $data)) {
+            Response::json(['message' => 'Publicación actualizada con éxito']);
+        } else {
+            Response::error("Error al actualizar la publicación", 500);
+        }
+    }
+
+    public function destroy($params) {
+        $cliente = AuthMiddleware::validate();
+        $id = $params['id'];
+
+        if (Post::delete($id, $cliente['id'])) {
+            Response::json(['message' => 'Publicación eliminada con éxito']);
+        } else {
+            Response::error("No se pudo eliminar: publicación no encontrada o no tienes permisos", 404);
+        }
     }
 
     private function handleFileUploads($post_id) {
