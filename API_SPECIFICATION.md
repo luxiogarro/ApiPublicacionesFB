@@ -1,7 +1,7 @@
-# API de Publicaciones — Guía de Integración Completa para IA
+# API de Publicaciones — Guía de Integración Centralizada para IA
 
 > **Cómo usar este archivo:** Cópialo a la raíz de tu proyecto y dile a la IA:  
-> *"Lee `ia-spec.md` e implementa el feed de publicaciones exactamente como describe, usando la API KEY y URL base indicadas."*
+> *"Lee `API_SPECIFICATION.md` e implementa el feed de publicaciones. El sistema es centralizado: este servidor almacena todo y distribuye el contenido a los clientes según su API KEY."*
 
 ---
 
@@ -20,11 +20,17 @@ X-API-KEY: TU_API_KEY
 
 ---
 
-## 2. Seguridad y Multi-tenancy (Aislamiento)
-Este sistema aplica un aislamiento estricto por cliente. Tu `X-API-KEY` determina automáticamente qué datos puedes ver y modificar.
-- **Aislamiento de Lectura**: Al consultar `/publicaciones`, solo recibirás las de tu propia empresa.
-- **Aislamiento de Escritura**: Al crear, actualizar o borrar, el sistema verifica que la operación pertenezca a tu `cliente_id`.
-- **Usuarios Locales**: Los autores son locales a tu instancia. Si envías un `usuario_external_id` que ya existe en otra empresa, para tu sistema será un usuario nuevo y único.
+## 2. Arquitectura de Centralización y Multi-tenancy
+Este sistema funciona como un **Núcleo Central de Almacenamiento**. Todas las publicaciones de todos los clientes residen en este servidor único.
+
+### 2.1 Aislamiento por API KEY
+Tu `X-API-KEY` es la llave que filtra los datos:
+- **Lectura Automática**: Al consultar `/publicaciones`, la API identifica qué cliente eres y solo te entrega tus publicaciones.
+- **Flujo Administrativo**: El Super-Admin desde el panel central puede crear una publicación, seleccionar tu empresa, y esta aparecerá inmediatamente en tu feed.
+- **Seguridad Estricta**: Un cliente nunca podrá ver, editar o borrar contenido de otra empresa, incluso si conoce su ID.
+
+### 2.2 Usuarios e Identidad
+- Los autores son locales a cada cliente. Un `usuario_external_id: "123"` en la Empresa A es independiente de un `"123"` en la Empresa B.
 
 ---
 
