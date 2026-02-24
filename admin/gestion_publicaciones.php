@@ -251,8 +251,8 @@ $clientes = $db->query("SELECT id, nombre FROM clientes ORDER BY nombre ASC")->f
 </style>
 
 <div class="admin-header">
-    <h1>Gestión de Publicaciones</h1>
-    <a href="nueva_publicacion.php" class="btn"><i class="fas fa-plus"></i> Nueva Publicación</a>
+    <h1>Gestión Centralizada</h1>
+    <a href="nueva_publicacion.php" class="btn"><i class="fas fa-plus"></i> Nueva Publicación Global</a>
 </div>
 
 <!-- Barra de Filtros -->

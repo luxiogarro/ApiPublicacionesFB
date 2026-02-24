@@ -241,8 +241,8 @@ $clientes = $db->query("SELECT id, nombre FROM clientes ORDER BY nombre ASC")->f
 ?>
 
 <div class="admin-header">
-    <h1>Feed Global</h1>
-    <p style="color: var(--text-muted); margin-top: 0.5rem;">Supervisión de contenido en tiempo real de toda la red.</p>
+    <h1>Monitor Global (Feed)</h1>
+    <p style="color: var(--text-muted); margin-top: 0.5rem;">Supervisión centralizada de contenido de toda la red de clientes.</p>
 </div>
 
 <div class="feed-container">

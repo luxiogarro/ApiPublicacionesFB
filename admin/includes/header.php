@@ -530,8 +530,8 @@ checkAuth();
             <a href="index.php" class="nav-link <?php echo $page == 'dashboard' ? 'active' : ''; ?>"><i class="fas fa-chart-line" style="margin-right:0.75rem;"></i> Dashboard</a>
             <a href="nueva_publicacion.php" class="nav-link <?php echo $page == 'nueva_p' ? 'active' : ''; ?>"><i class="fas fa-plus-circle" style="margin-right:0.75rem;"></i> Nueva Publicación</a>
             <a href="clientes.php" class="nav-link <?php echo $page == 'clientes' ? 'active' : ''; ?>"><i class="fas fa-building" style="margin-right:0.75rem;"></i> Clientes & API Keys</a>
-            <a href="publicaciones.php" class="nav-link <?php echo $page == 'publicaciones' ? 'active' : ''; ?>"><i class="fas fa-eye" style="margin-right:0.75rem;"></i> Monitor Feed</a>
-            <a href="gestion_publicaciones.php" class="nav-link <?php echo $page == 'gestion_publicaciones' ? 'active' : ''; ?>"><i class="fas fa-tasks" style="margin-right:0.75rem;"></i> Gestión CRUD</a>
+            <a href="publicaciones.php" class="nav-link <?php echo $page == 'publicaciones' ? 'active' : ''; ?>"><i class="fas fa-eye" style="margin-right:0.75rem;"></i> Monitor Global</a>
+            <a href="gestion_publicaciones.php" class="nav-link <?php echo $page == 'gestion_publicaciones' ? 'active' : ''; ?>"><i class="fas fa-tasks" style="margin-right:0.75rem;"></i> Gestión Centralizada</a>
             <a href="docs.php" class="nav-link <?php echo $page == 'docs' ? 'active' : ''; ?>"><i class="fas fa-book" style="margin-right:0.75rem;"></i> Documentación</a>
             <a href="download_spec.php" class="nav-link <?php echo $page == 'download_spec' ? 'active' : ''; ?>" style="color:#10b981;"><i class="fas fa-robot" style="margin-right:0.75rem;"></i> Descargar IA Spec</a>
             <a href="perfil.php" class="nav-link <?php echo $page == 'perfil' ? 'active' : ''; ?>"><i class="fas fa-user-cog" style="margin-right:0.75rem;"></i> Mi Perfil</a>
